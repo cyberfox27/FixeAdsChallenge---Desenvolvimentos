@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
+#import "FixeAdsItem.h"
+
 @interface ViewController ()
 {
     NSMutableArray *titlearrray;
@@ -22,11 +24,76 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat: @"https://olx.pt/i2/ads/?json=1&search[category_id]=25"];
+    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
+    //NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSArray *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSMutableArray *dict2 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    //response object is your response from server as NSData
+    
+    NSMutableArray* instances = [[NSMutableArray alloc] init];
+    //[instances addObject: foo];
+    //[instances addObject: bar];
+    // etc. mutable arrays grow as you add elements to them
+    
+    //[[instances objectAtIndex: i] setVar: 10];
+    
+    //NSLog(@"json: %@", dict);
+    
+    //NSString *categoryId = [dict valueForKey:@"category_id"];
+    
+    //NSLog(@"%@",dict);
+    
+    //NSLog(@"\ncategory_id is %@", categoryId);
+    
+    
+    //matches array
+    NSArray *matches = [dict valueForKey: @"ads"];
+    
+    long n = [matches count];
+    
+    titlearrray = [[NSMutableArray alloc]init];
+    subtitlearray = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < [matches count]; i++)
+    {
+        AdsItem *item = [[AdsItem alloc] init];
+        NSDictionary *Dic =[[NSDictionary alloc]init];
+        Dic=[matches objectAtIndex:i];
+        
+        NSString *title=[NSString stringWithFormat:@"%@",[Dic objectForKey:@"title"]];
+        NSString *description=[NSString stringWithFormat:@"%@",[Dic objectForKey:@"description"]];
+        
+        //item.title = title;
+        //item.description = description;
+        
+        [titlearrray addObject:title];
+        [subtitlearray addObject:description];
+
+    }
+
+
+//    item.categoryId = [dict 	valueForKey:@"category_id"];
+//    item.params = [dict 	valueForKey:@"params"];
+//    
+//    NSLog(@"\ncategory_id on array is %@", item.getCategoryId);
+//    NSLog(@"\params on array is %@", item.getParams);
+//    NSLog(@"vetor: %@", matches);
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
     self.ItemsList.delegate=self;  //use delegate methods of table view
     self.ItemsList.dataSource=self;
     [self.ItemsList registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    titlearrray = [[NSMutableArray alloc]initWithObjects:@"One", @"Two", @"Three",@"Four",@"Five",nil];
-    subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3",@"4",@"5",nil];
+    
+    
+    //titlearrray = [[NSMutableArray alloc] valuesfor];
+    
+    //subtitlearray = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3",@"4",@"5",nil];
     
     // Do any additional setup after loading the view, typically from a nib.
 }

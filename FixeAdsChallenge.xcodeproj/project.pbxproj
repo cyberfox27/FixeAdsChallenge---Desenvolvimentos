@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254621B51D1C33C400E75916 /* FixeAdsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 254621B41D1C33C400E75916 /* FixeAdsItem.m */; };
 		2575D60F1D1BDD5000C61BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D60E1D1BDD5000C61BBA /* main.m */; };
 		2575D6121D1BDD5000C61BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D6111D1BDD5000C61BBA /* AppDelegate.m */; };
 		2575D6151D1BDD5000C61BBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D6141D1BDD5000C61BBA /* ViewController.m */; };
@@ -15,6 +16,7 @@
 		2575D61D1D1BDD5000C61BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2575D61B1D1BDD5000C61BBA /* LaunchScreen.storyboard */; };
 		2575D6281D1BDD5000C61BBA /* FixeAdsChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D6271D1BDD5000C61BBA /* FixeAdsChallengeTests.m */; };
 		2575D6331D1BDD5000C61BBA /* FixeAdsChallengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D6321D1BDD5000C61BBA /* FixeAdsChallengeUITests.m */; };
+		2575D6491D1BF7BE00C61BBA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2575D6481D1BF7BE00C61BBA /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		254621B31D1C33C400E75916 /* FixeAdsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixeAdsItem.h; sourceTree = "<group>"; };
+		254621B41D1C33C400E75916 /* FixeAdsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixeAdsItem.m; sourceTree = "<group>"; };
 		2575D60A1D1BDD5000C61BBA /* FixeAdsChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixeAdsChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2575D60E1D1BDD5000C61BBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2575D6101D1BDD5000C61BBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		2575D62E1D1BDD5000C61BBA /* FixeAdsChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FixeAdsChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2575D6321D1BDD5000C61BBA /* FixeAdsChallengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixeAdsChallengeUITests.m; sourceTree = "<group>"; };
 		2575D6341D1BDD5000C61BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2575D6471D1BF7BE00C61BBA /* DetailViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		2575D6481D1BF7BE00C61BBA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251A4EAB1D1D34A00019610B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2575D6141D1BDD5000C61BBA /* ViewController.m */,
+				2575D6481D1BF7BE00C61BBA /* DetailViewController.m */,
+				2575D6471D1BF7BE00C61BBA /* DetailViewController.h */,
+				2575D6131D1BDD5000C61BBA /* ViewController.h */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		251A4EAC1D1D34C80019610B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				254621B31D1C33C400E75916 /* FixeAdsItem.h */,
+				254621B41D1C33C400E75916 /* FixeAdsItem.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		2575D6011D1BDD5000C61BBA = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +127,10 @@
 		2575D60C1D1BDD5000C61BBA /* FixeAdsChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				251A4EAC1D1D34C80019610B /* Data */,
+				251A4EAB1D1D34A00019610B /* UI */,
 				2575D6101D1BDD5000C61BBA /* AppDelegate.h */,
 				2575D6111D1BDD5000C61BBA /* AppDelegate.m */,
-				2575D6131D1BDD5000C61BBA /* ViewController.h */,
-				2575D6141D1BDD5000C61BBA /* ViewController.m */,
 				2575D6161D1BDD5000C61BBA /* Main.storyboard */,
 				2575D6191D1BDD5000C61BBA /* Assets.xcassets */,
 				2575D61B1D1BDD5000C61BBA /* LaunchScreen.storyboard */,
@@ -270,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2575D6491D1BF7BE00C61BBA /* DetailViewController.m in Sources */,
 				2575D6151D1BDD5000C61BBA /* ViewController.m in Sources */,
+				254621B51D1C33C400E75916 /* FixeAdsItem.m in Sources */,
 				2575D6121D1BDD5000C61BBA /* AppDelegate.m in Sources */,
 				2575D60F1D1BDD5000C61BBA /* main.m in Sources */,
 			);
@@ -498,6 +526,7 @@
 				2575D6391D1BDD5000C61BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2575D63A1D1BDD5000C61BBA /* Build configuration list for PBXNativeTarget "FixeAdsChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +535,7 @@
 				2575D63C1D1BDD5000C61BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2575D63D1D1BDD5000C61BBA /* Build configuration list for PBXNativeTarget "FixeAdsChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +544,7 @@
 				2575D63F1D1BDD5000C61BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
